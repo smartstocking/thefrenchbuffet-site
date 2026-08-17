@@ -53,25 +53,6 @@
       });
     }
 
-    /* ---------- Gallery filter ---------- */
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.masonry-item');
-    filterBtns.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        filterBtns.forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.getAttribute('data-filter');
-        items.forEach(item=>{
-          const cat = item.getAttribute('data-cat');
-          if(filter === 'all' || cat === filter){
-            item.removeAttribute('data-cat-hidden');
-          } else {
-            item.setAttribute('data-cat-hidden','');
-          }
-        });
-      });
-    });
-
     /* ---------- Lightbox for images ---------- */
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
