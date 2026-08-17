@@ -1,12 +1,12 @@
 /* ===== The French Buffet — design tokens ===== */
 :root{
-  --cream:#FFF8F9;
-  --cream-2:#F5E8EC;
-  --dark:#1A0A0E;
-  --burgundy:#6B1A2A;
-  --burgundy-dark:#4a1220;
-  --gold:#D4AF37;
-  --gold-soft:rgba(212,175,55,.35);
+  --cream:#FBF6EE;
+  --cream-2:#F3E7D3;
+  --dark:#221F14;
+  --burgundy:#5C6B3F;
+  --burgundy-dark:#3F4A2B;
+  --gold:#C1613B;
+  --gold-soft:rgba(193,97,59,.35);
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Inter',system-ui,sans-serif;
   --max:1280px;
@@ -59,8 +59,8 @@ h3{font-size:22px}
 
 /* ===== Header ===== */
 .site-header{
-  position:sticky;top:0;z-index:50;background:rgba(255,248,249,.92);
-  backdrop-filter:blur(8px);border-bottom:1px solid rgba(26,10,14,.06);
+  position:sticky;top:0;z-index:50;background:rgba(251,246,238,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid rgba(34,31,20,.06);
 }
 .header-inner{
   max-width:var(--max);margin:0 auto;padding:18px 24px;
@@ -72,13 +72,13 @@ h3{font-size:22px}
 .main-nav a{font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
 .main-nav a:hover{opacity:1;color:var(--burgundy)}
 .header-actions{display:flex;align-items:center;gap:16px}
-.lang-switch{display:flex;border:1px solid rgba(26,10,14,.15);border-radius:2px;overflow:hidden}
+.lang-switch{display:flex;border:1px solid rgba(34,31,20,.15);border-radius:2px;overflow:hidden}
 .lang-btn{padding:6px 10px;font-size:11px;letter-spacing:.05em;background:none;border:none;cursor:pointer;color:var(--dark);opacity:.6}
 .lang-btn.active{background:var(--burgundy);color:var(--cream);opacity:1}
 .burger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{width:22px;height:2px;background:var(--dark)}
 .mobile-nav{display:none;flex-direction:column;padding:8px 24px 24px;gap:4px}
-.mobile-nav a{padding:12px 0;border-bottom:1px solid rgba(26,10,14,.08);font-size:14px;text-transform:uppercase;letter-spacing:.05em}
+.mobile-nav a{padding:12px 0;border-bottom:1px solid rgba(34,31,20,.08);font-size:14px;text-transform:uppercase;letter-spacing:.05em}
 
 /* ===== Hero ===== */
 .hero{
@@ -87,12 +87,12 @@ h3{font-size:22px}
 }
 .hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(26,10,14,.82) 0%,rgba(26,10,14,.55) 55%,rgba(26,10,14,.25) 100%);
+  background:linear-gradient(90deg,rgba(34,31,20,.82) 0%,rgba(34,31,20,.55) 55%,rgba(34,31,20,.25) 100%);
 }
 .hero-content{position:relative;max-width:720px;padding:0 24px;margin-left:min(6vw,80px)}
 .hero .eyebrow{color:var(--gold)}
 .hero h1{font-size:clamp(40px,7vw,84px);color:var(--cream)}
-.hero h1 em{color:#e79bab;font-style:italic;font-weight:400}
+.hero h1 em{color:#E29A78;font-style:italic;font-weight:400}
 .hero-sub{margin-top:20px;font-size:18px;max-width:460px;opacity:.92}
 .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
 .delivery-badge{margin-top:18px;font-size:13px;opacity:.7}
@@ -113,7 +113,7 @@ h3{font-size:22px}
 .check-list li{position:relative;padding-left:22px;margin-bottom:10px;opacity:.85;font-size:15px}
 .check-list li::before{content:'—';position:absolute;left:0;color:var(--burgundy)}
 .check-list.light li::before{color:var(--gold)}
-.about-image img{border-radius:4px;box-shadow:0 20px 50px rgba(26,10,14,.15)}
+.about-image img{border-radius:4px;box-shadow:0 20px 50px rgba(34,31,20,.15)}
 
 .features{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
 .feature-icon{font-size:26px;display:block;margin:0 auto 14px;width:56px;height:56px;line-height:56px;background:var(--cream-2);border-radius:4px}
@@ -163,7 +163,7 @@ h3{font-size:22px}
   border:1px solid var(--gold-soft);border-radius:4px;padding:32px 28px;
   position:relative;transition:border-color .25s ease,transform .25s ease;background:var(--cream);
 }
-.offer-card:hover{border-color:rgba(212,175,55,.75);transform:translateY(-3px)}
+.offer-card:hover{border-color:rgba(193,97,59,.75);transform:translateY(-3px)}
 .offer-card.featured{background:var(--cream-2)}
 .offer-tag{
   display:inline-block;font-size:10px;letter-spacing:.1em;padding:4px 10px;
@@ -176,7 +176,7 @@ h3{font-size:22px}
 .offer-card ul{margin-bottom:18px}
 .offer-card ul li{font-size:13px;opacity:.75;padding-left:16px;position:relative;margin-bottom:6px}
 .offer-card ul li::before{content:'·';position:absolute;left:0;color:var(--burgundy)}
-.price-hint{font-size:14px;padding-top:14px;border-top:1px solid rgba(26,10,14,.08)}
+.price-hint{font-size:14px;padding-top:14px;border-top:1px solid rgba(34,31,20,.08)}
 .price-hint strong{color:var(--burgundy);font-size:17px}
 .menu-card{display:flex;flex-direction:column;justify-content:center;text-align:center;background:var(--cream-2)}
 .menu-card .btn{margin-top:10px;align-self:center}
@@ -185,7 +185,7 @@ h3{font-size:22px}
 /* ===== Actus ===== */
 .actus{background:var(--cream-2)}
 .actus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.actus-card{background:var(--cream);border-radius:4px;overflow:hidden;box-shadow:0 10px 30px rgba(26,10,14,.06)}
+.actus-card{background:var(--cream);border-radius:4px;overflow:hidden;box-shadow:0 10px 30px rgba(34,31,20,.06)}
 .actus-card img{height:200px;object-fit:cover;width:100%}
 .actus-body{padding:22px}
 .actus-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy);margin-bottom:8px}
