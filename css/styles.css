@@ -187,6 +187,7 @@ h3{font-size:22px}
 .price-hint strong{color:var(--burgundy);font-size:17px}
 .menu-card{display:flex;flex-direction:column;justify-content:center;text-align:center;background:var(--cream-2)}
 .menu-card .btn{margin-top:10px;align-self:center}
+.offers-note{text-align:center;font-size:13px;opacity:.65;max-width:640px;margin:32px auto 0}
 
 /* ===== Actus ===== */
 .actus{background:var(--cream-2)}
