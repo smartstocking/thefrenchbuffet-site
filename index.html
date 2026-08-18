@@ -75,8 +75,15 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero" style="background-image:url('/img/gallery-tomahawk-grill.jpg')">
+<section class="hero" id="hero">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="/img/hero-video-poster.jpg">
+    <source src="/video/buffet-spread.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
+  <button class="hero-sound-toggle" id="heroSoundToggle" type="button" aria-label="Ton ein-/ausschalten" aria-pressed="false">
+    <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><line x1="16" y1="9" x2="21" y2="14"/><line x1="21" y1="9" x2="16" y2="14"/></svg>
+    <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>
+  </button>
   <div class="hero-content">
     <p class="eyebrow" data-i18n="hero.eyebrow">CATERING · BERLIN</p>
     <p class="hero-badge"><svg class="hero-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v2a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7v-2Z"/><path d="M2 10h20"/><path d="M9 4c0 1-1 1-1 2M12 4c0 1-1 1-1 2M15 4c0 1-1 1-1 2"/></svg><span data-i18n="hero.badge">100&nbsp;% hausgemacht — von A bis Z selbst zubereitet</span></p>
@@ -120,7 +127,7 @@
       <p class="eyebrow" data-i18n="about.eyebrow">UNSERE GESCHICHTE</p>
       <h2 data-i18n="about.title">In Frankreich ist Essen niemals nur Essen.</h2>
       <p data-i18n="about.p1">Ich heiße Oumar und lebe seit einigen Jahren in Berlin. Was mir am meisten fehlte, war nicht Paris — es war der Geschmack. Der einer Küche, in der jedes Gericht mit Zeit, Liebe und echten Zutaten gemacht wird, ganz ohne Abkürzungen.</p>
-      <p data-i18n="about.p2">Aus dieser Sehnsucht wurde The French Buffet: die Idee, diesen Geschmack mit nach Berlin zu bringen und ihn mit möglichst vielen Menschen zu teilen — mit Unternehmen, Teams und Events, die etwas mehr Wärme und Kultur in ihren Alltag holen wollen.</p>
+      <p data-i18n="about.p2">Aus dieser Sehnsucht wurde The French Buffet: gemeinsam mit meinem Freund Kelian — dem eigentlichen Küchentalent hinter unseren Gerichten — habe ich diese Idee Wirklichkeit werden lassen, um diesen Geschmack mit nach Berlin zu bringen und ihn mit möglichst vielen Menschen zu teilen — mit Unternehmen, Teams und Events, die etwas mehr Wärme und Kultur in ihren Alltag holen wollen.</p>
       <p data-i18n="about.p3">Kochen ist für mich mehr als ein Beruf — es ist eine Leidenschaft. Deshalb wird bei uns alles von Grund auf selbst gemacht, von A bis Z: keine Fertigprodukte, keine Kompromisse. Nur echtes, handwerkliches Essen, wie zu Hause in Frankreich.</p>
       <ul class="check-list">
         <li data-i18n="about.li1">100&nbsp;% hausgemacht — von A bis Z, ohne Fertigprodukte</li>
