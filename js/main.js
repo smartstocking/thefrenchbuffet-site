@@ -52,9 +52,31 @@
         heroSoundToggle.setAttribute('aria-pressed', String(!heroVideo.muted));
       });
 
-      /* Browsers block audible autoplay, but any user interaction with the
-         page counts as a gesture — so unmute automatically on the visitor's
-         first scroll/click/keypress, unless they've explicitly muted it. */
+      /* Try to start with sound ON right away. Most browsers block audible
+         autoplay on a visitor's very first page load (no exceptions possible —
+         this is a hard browser security rule, not something the site controls),
+         but some allow it once a visitor has engaged with the site's media
+         before, or on later visits. So we attempt it immediately; if the
+         browser rejects it we silently fall back to muted autoplay. */
+      const tryStartWithSound = ()=>{
+        heroVideo.muted = false;
+        const playPromise = heroVideo.play();
+        if(playPromise && playPromise.catch){
+          playPromise.then(()=>{
+            heroSoundToggle.setAttribute('aria-pressed','true');
+          }).catch(()=>{
+            heroVideo.muted = true;
+            heroSoundToggle.setAttribute('aria-pressed','false');
+            heroVideo.play().catch(()=>{});
+          });
+        }
+      };
+      tryStartWithSound();
+
+      /* Fallback for the (common) case where the browser blocked sound above:
+         any interaction with the page counts as a user gesture, so unmute
+         automatically on the visitor's first scroll/click/keypress, unless
+         they've explicitly muted it via the toggle. */
       const unmuteOnFirstInteraction = ()=>{
         if(!heroSoundManuallyMuted){
           heroVideo.muted = false;
