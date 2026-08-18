@@ -41,6 +41,16 @@
       btn.addEventListener('click', ()=> applyLang(btn.getAttribute('data-lang')));
     });
 
+    /* ---------- Hero video sound toggle ---------- */
+    const heroVideo = document.getElementById('heroVideo');
+    const heroSoundToggle = document.getElementById('heroSoundToggle');
+    if(heroVideo && heroSoundToggle){
+      heroSoundToggle.addEventListener('click', ()=>{
+        heroVideo.muted = !heroVideo.muted;
+        heroSoundToggle.setAttribute('aria-pressed', String(!heroVideo.muted));
+      });
+    }
+
     /* ---------- Mobile menu ---------- */
     const burger = document.getElementById('burgerBtn');
     const mobileNav = document.getElementById('mobileNav');
