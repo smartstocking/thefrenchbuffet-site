@@ -57,6 +57,37 @@ h3{font-size:22px}
 .btn-sm{padding:11px 22px;font-size:12px}
 .btn-block{width:100%}
 
+/* ===== Entry gate ===== */
+.entry-gate{
+  position:fixed;inset:0;z-index:200;
+  background:linear-gradient(160deg,var(--dark) 0%,var(--burgundy-dark) 100%);
+  color:var(--cream);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:24px;
+  opacity:1;transition:opacity .5s ease;
+}
+.entry-gate.entry-gate--hidden{opacity:0;pointer-events:none}
+.entry-gate-inner{max-width:420px}
+.entry-gate-mark{width:52px;height:52px;color:var(--gold);margin:0 auto 18px}
+.entry-gate-brand{
+  font-family:var(--serif);font-style:italic;font-size:30px;color:var(--cream);margin-bottom:10px;
+}
+.entry-gate-tagline{
+  font-size:15px;opacity:.75;margin-bottom:32px;letter-spacing:.02em;
+}
+.entry-gate-btn{width:100%;justify-content:center}
+.entry-gate-hint{
+  margin-top:16px;font-size:12px;opacity:.55;letter-spacing:.04em;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.entry-gate-hint::before{
+  content:"";width:14px;height:14px;flex-shrink:0;
+  background:currentColor;
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>') center/contain no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18 6a9 9 0 0 1 0 12"/></svg>') center/contain no-repeat;
+}
+body.entry-gate-open{overflow:hidden}
+
 /* ===== Header ===== */
 .site-header{
   position:sticky;top:0;z-index:50;background:rgba(251,246,238,.92);
