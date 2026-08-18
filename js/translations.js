@@ -1,5 +1,6 @@
 const TRANSLATIONS = {
 en: {
+  "entryGate.tagline":"French Soul. Berlin Energy.","entryGate.button":"Enter the site","entryGate.hint":"With sound — for the full experience",
   "nav.story":"Our Story","nav.gallery":"Gallery","nav.reviews":"Reviews","nav.offers":"Offers","nav.news":"News",
   "nav.cta":"Request a quote","nav.cta2":"Request a quote",
   "hero.eyebrow":"CATERING · BERLIN",
@@ -95,6 +96,7 @@ en: {
   "footer.address":"ADDRESS","footer.country":"Germany","footer.imprint":"Legal Notice","footer.privacy":"Privacy Policy"
 },
 fr: {
+  "entryGate.tagline":"Âme française. Énergie berlinoise.","entryGate.button":"Entrer sur le site","entryGate.hint":"Avec le son — pour l'expérience complète",
   "nav.story":"Notre histoire","nav.gallery":"Galerie","nav.reviews":"Références","nav.offers":"Nos offres","nav.news":"Actus",
   "nav.cta":"Demander un devis","nav.cta2":"Demander un devis",
   "hero.eyebrow":"TRAITEUR · BERLIN",
