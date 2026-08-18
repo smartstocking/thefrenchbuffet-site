@@ -68,6 +68,7 @@
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
 
+    const items = document.querySelectorAll('.masonry-item');
     items.forEach(item=>{
       const img = item.querySelector('img');
       const video = item.querySelector('video');
