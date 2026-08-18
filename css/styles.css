@@ -188,7 +188,7 @@ h3{font-size:22px}
 .offer-card ul li::before{content:'·';position:absolute;left:0;color:var(--burgundy)}
 .price-hint{font-size:14px;padding-top:14px;border-top:1px solid rgba(34,31,20,.08)}
 .price-hint strong{color:var(--burgundy);font-size:17px}
-.menu-card{display:flex;flex-direction:column;justify-content:center;text-align:center;background:var(--cream-2)}
+.menu-card{grid-column:1 / -1;display:flex;flex-direction:column;justify-content:center;text-align:center;background:var(--cream-2)}
 .menu-card .btn{margin-top:10px;align-self:center}
 .offers-note{text-align:center;font-size:13px;opacity:.65;max-width:640px;margin:32px auto 0}
 
