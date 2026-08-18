@@ -89,44 +89,6 @@
         document.addEventListener(evt, unmuteOnFirstInteraction, {once:true, passive:true}));
     }
 
-    /* ---------- Entry gate ----------
-       Browsers never allow audible autoplay before a visitor has interacted
-       with the page — no site can bypass that. Clicking "Enter" is a genuine
-       user gesture, so it's the one moment we can guarantee sound starts
-       immediately. Shown once per browser session. */
-    const entryGate = document.getElementById('entryGate');
-    const entryGateBtn = document.getElementById('entryGateBtn');
-    const GATE_KEY = 'tfb-entered';
-    if(entryGate){
-      let alreadyEntered = false;
-      try{ alreadyEntered = sessionStorage.getItem(GATE_KEY) === '1'; }catch(e){}
-
-      const dismissGate = ()=>{
-        document.body.classList.remove('entry-gate-open');
-        entryGate.classList.add('entry-gate--hidden');
-        setTimeout(()=> entryGate.remove(), 600);
-      };
-
-      if(alreadyEntered){
-        dismissGate();
-      } else {
-        document.body.classList.add('entry-gate-open');
-        if(entryGateBtn){
-          entryGateBtn.addEventListener('click', ()=>{
-            try{ sessionStorage.setItem(GATE_KEY, '1'); }catch(e){}
-            dismissGate();
-            /* This click is a genuine user gesture — start the hero video
-               with sound right away, unless already muted manually. */
-            if(heroVideo && !heroSoundManuallyMuted){
-              heroVideo.muted = false;
-              heroVideo.play().catch(()=>{});
-              if(heroSoundToggle) heroSoundToggle.setAttribute('aria-pressed','true');
-            }
-          });
-        }
-      }
-    }
-
     /* ---------- Pause hero video (and its sound) once it's scrolled out of view ---------- */
     if(heroVideo && 'IntersectionObserver' in window){
       const heroVideoObserver = new IntersectionObserver((entries)=>{
