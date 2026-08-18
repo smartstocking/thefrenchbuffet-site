@@ -44,11 +44,27 @@
     /* ---------- Hero video sound toggle ---------- */
     const heroVideo = document.getElementById('heroVideo');
     const heroSoundToggle = document.getElementById('heroSoundToggle');
+    let heroSoundManuallyMuted = false;
     if(heroVideo && heroSoundToggle){
       heroSoundToggle.addEventListener('click', ()=>{
         heroVideo.muted = !heroVideo.muted;
+        heroSoundManuallyMuted = heroVideo.muted;
         heroSoundToggle.setAttribute('aria-pressed', String(!heroVideo.muted));
       });
+
+      /* Browsers block audible autoplay, but any user interaction with the
+         page counts as a gesture — so unmute automatically on the visitor's
+         first scroll/click/keypress, unless they've explicitly muted it. */
+      const unmuteOnFirstInteraction = ()=>{
+        if(!heroSoundManuallyMuted){
+          heroVideo.muted = false;
+          heroSoundToggle.setAttribute('aria-pressed','true');
+        }
+        ['scroll','click','keydown','touchstart'].forEach(evt=>
+          document.removeEventListener(evt, unmuteOnFirstInteraction));
+      };
+      ['scroll','click','keydown','touchstart'].forEach(evt=>
+        document.addEventListener(evt, unmuteOnFirstInteraction, {once:true, passive:true}));
     }
 
     /* ---------- Mobile menu ---------- */
