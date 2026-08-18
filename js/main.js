@@ -67,6 +67,34 @@
         document.addEventListener(evt, unmuteOnFirstInteraction, {once:true, passive:true}));
     }
 
+    /* ---------- Pause hero video (and its sound) once it's scrolled out of view ---------- */
+    if(heroVideo && 'IntersectionObserver' in window){
+      const heroVideoObserver = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            heroVideo.play().catch(()=>{});
+          } else {
+            heroVideo.pause();
+          }
+        });
+      }, { threshold: 0.15 });
+      heroVideoObserver.observe(heroVideo);
+
+      /* Also pause if the browser tab/app loses focus, so it doesn't keep
+         playing silently in the background — and resume if the hero is
+         still on screen when focus returns. */
+      document.addEventListener('visibilitychange', ()=>{
+        if(document.hidden){
+          heroVideo.pause();
+        } else {
+          const rect = heroVideo.getBoundingClientRect();
+          if(rect.bottom > 0 && rect.top < window.innerHeight){
+            heroVideo.play().catch(()=>{});
+          }
+        }
+      });
+    }
+
     /* ---------- Mobile menu ---------- */
     const burger = document.getElementById('burgerBtn');
     const mobileNav = document.getElementById('mobileNav');
