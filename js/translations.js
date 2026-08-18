@@ -91,7 +91,7 @@ en: {
   "contact.form.guests":"NUMBER OF GUESTS","contact.form.message":"SHORT MESSAGE","contact.form.submit":"REQUEST A QUOTE",
   "contact.form.note":"Reply within 24h — a real person, not a bot.",
   "footer.tag":"FRENCH GASTRONOMY · BERLIN","footer.desc":"Authentic French catering for corporate events and receptions in Berlin.",
-  "footer.nav":"NAVIGATION","footer.contact":"CONTACT","footer.hours":"24/7 · available around the clock",
+  "footer.nav":"NAVIGATION","footer.contact":"CONTACT","footer.hours":"Available from 8:30 am to 9 pm",
   "footer.address":"ADDRESS","footer.country":"Germany","footer.imprint":"Legal Notice","footer.privacy":"Privacy Policy"
 },
 fr: {
@@ -186,7 +186,7 @@ fr: {
   "contact.form.guests":"NOMBRE D'INVITÉS","contact.form.message":"MESSAGE COURT","contact.form.submit":"DEMANDER UN DEVIS",
   "contact.form.note":"Réponse sous 24h — une vraie personne, pas un bot.",
   "footer.tag":"GASTRONOMIE FRANÇAISE · BERLIN","footer.desc":"Traiteur français authentique pour événements d'entreprise et réceptions à Berlin.",
-  "footer.nav":"NAVIGATION","footer.contact":"CONTACT","footer.hours":"24/7 · joignable à toute heure",
+  "footer.nav":"NAVIGATION","footer.contact":"CONTACT","footer.hours":"Joignable de 8h30 à 21h",
   "footer.address":"ADRESSE","footer.country":"Allemagne","footer.imprint":"Mentions légales","footer.privacy":"Confidentialité"
 }
 };
