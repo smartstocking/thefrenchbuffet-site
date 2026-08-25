@@ -68,7 +68,9 @@ h3{font-size:22px}
 }
 .logo{font-family:var(--serif);font-size:22px;font-style:italic;display:inline-flex;align-items:center;gap:10px;color:var(--burgundy)}
 .logo-mark{width:28px;height:28px;flex-shrink:0}
+.logo-img{height:48px;width:48px;border-radius:10px;display:block;object-fit:cover}
 .footer-logo{color:var(--cream)}
+.footer-logo-img{height:56px;width:56px}
 .reg{font-size:11px;vertical-align:super;font-style:normal}
 .main-nav{display:flex;gap:32px}
 .main-nav a{font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
