@@ -188,3 +188,41 @@ fr: {
   "footer.address":"ADRESSE","footer.country":"Allemagne","footer.imprint":"Mentions légales","footer.privacy":"Confidentialité"
 }
 };
+
+/* ===== Google review translations =====
+   Each review keeps its authentic original text by default. Visitors can
+   optionally translate it into the site's current language via a small
+   toggle link (native language = no toggle shown, since there's nothing to translate). */
+const REVIEW_TRANSLATIONS = {
+  r_john: {
+    native: "en",
+    de: "„EINFACH DIE BESTEN. Das Team von TheFrenchBuffet bereitet die leckersten und interessantesten Menüs für jeden Anlass zu. Unsere Familie und Freunde lieben die Auswahl an Köstlichkeiten, alles frisch und mit Sorgfalt zubereitet. Ich habe das Team meinem Büro empfohlen, das sie jetzt regelmäßig für unsere Arbeitsessen und Feiern bucht, zur Freude meiner Kollegen. Sie haben sogar das Abendessen für eine von uns gesponserte Bootstour im Sommer übernommen und ein herrliches Festmahl gezaubert, während wir die Spree rauf und runter gefahren sind. Wenn Sie jemals Catering brauchen, tun Sie sich selbst einen Gefallen und melden Sie sich noch HEUTE bei ihnen.“",
+    fr: "« TOUT SIMPLEMENT LES MEILLEURS. L'équipe de TheFrenchBuffet prépare les menus les plus savoureux et les plus originaux pour toutes les occasions. Notre famille et nos amis adorent leur sélection de mets, tous préparés frais et avec soin. J'ai recommandé cette équipe à mon bureau, qui fait maintenant appel à eux, pour le plus grand plaisir de mes collègues, pour nos déjeuners de travail et nos fêtes régulières. Ils ont même accepté de préparer le dîner pour une croisière estivale que nous sponsorisions, et ont réussi à concocter un festin somptueux pendant que nous naviguions sur la Spree. Si vous avez besoin d'un traiteur, faites-vous plaisir et contactez-les dès AUJOURD'HUI. »"
+  },
+  r_sandra: {
+    native: "de",
+    en: "\"Very nice team, flexible with arrangements, and above all delicious, varied food. Thank you very much!\"",
+    fr: "« Équipe très sympathique, flexible dans les échanges et surtout une cuisine délicieuse et variée. Merci beaucoup ! »"
+  },
+  r_marion: {
+    native: "de",
+    en: "\"Great food, very flexible and pleasant process. Happy to come back!\"",
+    fr: "« Excellente cuisine, déroulement très flexible et agréable. Avec plaisir, on recommencera ! »"
+  },
+  r_marius: {
+    native: "de",
+    en: "\"Everything was great! From delivery to the plate, I can only recommend it, merci beaucoup 😉\"",
+    fr: "« Tout était top ! De la livraison jusqu'à l'assiette, je ne peux que recommander, merci beaucoup 😉 »"
+  },
+  r_gerber: {
+    native: "de",
+    en: "\"We had a bigger birthday party and booked catering, everything was just right! Great presentation with surprising, creative ideas, everything planned individually together with us. Very friendly contact. And it tasted incredibly delicious too! We can only recommend them, thanks again!\"",
+    fr: "« Nous avons organisé un grand anniversaire et fait appel à leur service traiteur, tout était parfait ! Belle présentation avec des idées créatives et surprenantes, tout a été planifié avec nous de façon personnalisée. Contact très sympathique. Et c'était incroyablement délicieux ! On ne peut que les recommander, merci encore ! »"
+  }
+};
+
+const REVIEW_TOGGLE_LABELS = {
+  de: { show: "Übersetzung anzeigen", original: "Original anzeigen" },
+  en: { show: "See translation", original: "See original" },
+  fr: { show: "Voir la traduction", original: "Voir l'original" }
+};

@@ -31,6 +31,47 @@
     });
     currentLang = lang;
     localStorage.setItem(STORAGE_KEY, lang);
+    refreshReviewTranslations();
+  }
+
+  /* ---------- Optional review translation toggle ----------
+     Reviews always show their authentic original text by default. If a
+     translation into the site's current language is available (see
+     REVIEW_TRANSLATIONS in translations.js), a small link lets visitors
+     switch to it and back — same idea as Google's own "See translation". */
+  function refreshReviewTranslations(){
+    if(typeof REVIEW_TRANSLATIONS === 'undefined') return;
+    document.querySelectorAll('.quote[data-review-id]').forEach(q=>{
+      const data = REVIEW_TRANSLATIONS[q.getAttribute('data-review-id')];
+      const btn = q.nextElementSibling && q.nextElementSibling.classList.contains('review-translate')
+        ? q.nextElementSibling : null;
+      if(!data || !btn) return;
+
+      if(!q.dataset.original){ q.dataset.original = q.innerHTML; }
+      // Any language change resets the card back to its original text.
+      q.innerHTML = q.dataset.original;
+      q.dataset.translated = 'false';
+
+      if(currentLang === data.native || !data[currentLang]){
+        btn.style.display = 'none';
+        btn.onclick = null;
+        return;
+      }
+      const labels = (typeof REVIEW_TOGGLE_LABELS !== 'undefined' && REVIEW_TOGGLE_LABELS[currentLang]) || { show:'See translation', original:'See original' };
+      btn.style.display = '';
+      btn.textContent = labels.show;
+      btn.onclick = function(){
+        if(q.dataset.translated === 'true'){
+          q.innerHTML = q.dataset.original;
+          q.dataset.translated = 'false';
+          btn.textContent = labels.show;
+        } else {
+          q.innerHTML = data[currentLang];
+          q.dataset.translated = 'true';
+          btn.textContent = labels.original;
+        }
+      };
+    });
   }
 
   document.addEventListener('DOMContentLoaded', function(){
