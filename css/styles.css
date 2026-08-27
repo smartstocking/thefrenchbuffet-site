@@ -1,10 +1,10 @@
 /* ===== The French Buffet — design tokens ===== */
 :root{
-  --cream:#FBF6EE;
-  --cream-2:#F3E7D3;
+  --cream:#FFFFFF;
+  --cream-2:#F7EDEF;
   --dark:#221F14;
-  --burgundy:#5C6B3F;
-  --burgundy-dark:#3F4A2B;
+  --burgundy:#8C3248;
+  --burgundy-dark:#6E2438;
   --gold:#C1613B;
   --gold-soft:rgba(193,97,59,.35);
   --serif:'Cormorant Garamond',Georgia,serif;
