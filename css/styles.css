@@ -174,6 +174,16 @@ h3{font-size:22px}
 .stars{color:var(--gold);font-size:20px;letter-spacing:4px;margin-bottom:20px}
 .quote{font-family:var(--serif);font-size:24px;font-style:italic;line-height:1.4;margin-bottom:20px}
 .author{opacity:.8;font-size:14px}
+.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.review-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  border-radius:4px;padding:32px 28px;text-align:left;
+}
+.review-card .stars{font-size:15px;letter-spacing:3px;margin-bottom:14px}
+.review-card .quote{font-size:16.5px;line-height:1.55;text-align:left;margin-bottom:16px}
+.review-card .author{font-size:13px;opacity:.85}
+.review-source{opacity:.7}
+.review-card--featured{grid-column:span 2}
 .google-cta{
   margin-top:64px;padding-top:48px;border-top:1px solid rgba(255,255,255,.12);
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
@@ -285,6 +295,8 @@ h3{font-size:22px}
   .about-grid{grid-template-columns:1fr}
   .about-image{order:-1}
   .features{grid-template-columns:repeat(2,1fr)}
+  .review-grid{grid-template-columns:1fr}
+  .review-card--featured{grid-column:span 1}
   .offer-grid{grid-template-columns:1fr 1fr}
   .actus-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
