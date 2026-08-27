@@ -182,6 +182,12 @@ h3{font-size:22px}
 .review-card .stars{font-size:15px;letter-spacing:3px;margin-bottom:14px}
 .review-card .quote{font-size:16.5px;line-height:1.55;text-align:left;margin-bottom:16px}
 .review-card .author{font-size:13px;opacity:.85}
+.review-translate{
+  display:block;background:none;border:none;padding:0;margin:-6px 0 14px;
+  font-family:var(--sans);font-size:12.5px;color:var(--gold);opacity:.9;
+  cursor:pointer;text-decoration:underline;text-underline-offset:2px;
+}
+.review-translate:hover{opacity:1}
 .review-source{opacity:.7}
 .review-card--featured{grid-column:span 2}
 .google-cta{
