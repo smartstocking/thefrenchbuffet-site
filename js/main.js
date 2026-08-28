@@ -74,9 +74,56 @@
     });
   }
 
+  /* ---------- Cookie consent (Google Consent Mode) ----------
+     The Google tag is loaded with consent denied by default (see the
+     inline script in <head>). Here we just react to the visitor's choice:
+     remember it, re-apply it on later visits, and show the banner only
+     when no choice has been recorded yet. */
+  const CONSENT_KEY = 'tfb-consent';
+
+  function grantConsent(){
+    if(typeof gtag === 'function'){
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  }
+
+  function initCookieConsent(){
+    const banner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('cookieAccept');
+    const declineBtn = document.getElementById('cookieDecline');
+    if(!banner) return;
+
+    const stored = localStorage.getItem(CONSENT_KEY);
+    if(stored === 'granted'){
+      grantConsent();
+    } else if(stored !== 'denied'){
+      banner.hidden = false;
+    }
+
+    if(acceptBtn){
+      acceptBtn.addEventListener('click', ()=>{
+        localStorage.setItem(CONSENT_KEY, 'granted');
+        grantConsent();
+        banner.hidden = true;
+      });
+    }
+    if(declineBtn){
+      declineBtn.addEventListener('click', ()=>{
+        localStorage.setItem(CONSENT_KEY, 'denied');
+        banner.hidden = true;
+      });
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function(){
     captureOriginals();
     applyLang(currentLang);
+    initCookieConsent();
 
     document.querySelectorAll('.lang-btn').forEach(btn=>{
       btn.addEventListener('click', ()=> applyLang(btn.getAttribute('data-lang')));

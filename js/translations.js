@@ -91,7 +91,10 @@ en: {
   "contact.form.note":"Reply within 24h — a real person, not a bot.",
   "footer.tag":"FRENCH GASTRONOMY · BERLIN","footer.desc":"Authentic French catering for corporate events and receptions in Berlin.",
   "footer.nav":"NAVIGATION","footer.contact":"CONTACT","footer.hours":"Available from 8:30 am to 9 pm",
-  "footer.address":"ADDRESS","footer.country":"Germany","footer.imprint":"Legal Notice","footer.privacy":"Privacy Policy"
+  "footer.address":"ADDRESS","footer.country":"Germany","footer.imprint":"Legal Notice","footer.privacy":"Privacy Policy",
+  "cookie.text":"We use cookies to analyse the use of our website and to show you relevant advertising. More information in our <a href=\"datenschutz.html\">privacy policy</a>.",
+  "cookie.decline":"Decline",
+  "cookie.accept":"Accept"
 },
 fr: {
   "nav.story":"Notre histoire","nav.gallery":"Galerie","nav.reviews":"Références","nav.offers":"Nos offres","nav.news":"Actus",
@@ -185,7 +188,10 @@ fr: {
   "contact.form.note":"Réponse sous 24h — une vraie personne, pas un bot.",
   "footer.tag":"GASTRONOMIE FRANÇAISE · BERLIN","footer.desc":"Traiteur français authentique pour événements d'entreprise et réceptions à Berlin.",
   "footer.nav":"NAVIGATION","footer.contact":"CONTACT","footer.hours":"Joignable de 8h30 à 21h",
-  "footer.address":"ADRESSE","footer.country":"Allemagne","footer.imprint":"Mentions légales","footer.privacy":"Confidentialité"
+  "footer.address":"ADRESSE","footer.country":"Allemagne","footer.imprint":"Mentions légales","footer.privacy":"Confidentialité",
+  "cookie.text":"Nous utilisons des cookies pour analyser l'utilisation de notre site et vous montrer des publicités pertinentes. Plus d'informations dans notre <a href=\"datenschutz.html\">politique de confidentialité</a>.",
+  "cookie.decline":"Refuser",
+  "cookie.accept":"Accepter"
 }
 };
 
