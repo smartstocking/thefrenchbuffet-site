@@ -274,6 +274,14 @@
           message || '—'
         ];
         const body = encodeURIComponent(bodyLines.join('\n'));
+
+        /* Google Ads conversion tracking: fires on the "Envoyer" click itself,
+           since this form has no dedicated confirmation page to load (it opens
+           the visitor's email client via mailto: instead). */
+        if(typeof gtag === 'function'){
+          gtag('event', 'conversion', {'send_to': 'AW-18412704316/T_s6CNyjw-gcELyk7stE'});
+        }
+
         window.location.href = 'mailto:contact@thefrenchbuffet.de?subject=' + subject + '&body=' + body;
       });
     }
