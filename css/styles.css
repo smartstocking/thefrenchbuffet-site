@@ -288,6 +288,28 @@ h3{font-size:22px}
   color:#fff;font-size:28px;cursor:pointer;
 }
 
+/* ===== Cookie consent banner ===== */
+.cookie-banner{
+  position:fixed;left:0;right:0;bottom:0;z-index:90;
+  background:var(--dark);color:var(--cream-2);
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:20px 24px;display:flex;align-items:center;justify-content:center;
+  gap:24px;flex-wrap:wrap;box-shadow:0 -8px 24px rgba(0,0,0,.25);
+}
+.cookie-banner p{
+  font-family:var(--sans);font-size:13.5px;line-height:1.55;margin:0;
+  max-width:640px;flex:1 1 320px;opacity:.9;
+}
+.cookie-banner a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+.cookie-actions{display:flex;gap:12px;flex:0 0 auto}
+.cookie-actions .btn{padding:10px 20px;font-size:13px;white-space:nowrap}
+
+@media(max-width:640px){
+  .cookie-banner{padding:18px 18px;justify-content:flex-start}
+  .cookie-actions{width:100%}
+  .cookie-actions .btn{flex:1}
+}
+
 /* ===== Responsive ===== */
 @media(max-width:960px){
   .main-nav{display:none}
