@@ -303,6 +303,7 @@ h3{font-size:22px}
 .cookie-banner a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
 .cookie-actions{display:flex;gap:12px;flex:0 0 auto}
 .cookie-actions .btn{padding:10px 20px;font-size:13px;white-space:nowrap}
+.cookie-banner[hidden]{display:none}
 
 @media(max-width:640px){
   .cookie-banner{padding:18px 18px;justify-content:flex-start}
