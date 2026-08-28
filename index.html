@@ -27,6 +27,24 @@
 <link rel="preload" as="image" href="img/gallery-tomahawk-grill.jpg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="css/styles.css">
+
+<!-- Google consent default: deny tracking until the visitor accepts the cookie banner -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18412704316"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'AW-18412704316');
+</script>
 </head>
 <body>
 
@@ -577,6 +595,14 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">✕</button>
   <img id="lightboxImg" src="" alt="">
+</div>
+
+<div class="cookie-banner" id="cookieBanner" hidden>
+  <p data-i18n="cookie.text">Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren und Ihnen relevante Werbung zu zeigen. Weitere Infos in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-outline-light" id="cookieDecline" data-i18n="cookie.decline">Ablehnen</button>
+    <button type="button" class="btn btn-primary" id="cookieAccept" data-i18n="cookie.accept">Akzeptieren</button>
+  </div>
 </div>
 
 <script src="js/translations.js"></script>
