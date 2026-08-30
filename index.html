@@ -28,6 +28,35 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="css/styles.css">
 
+<!-- Structured data: helps Google understand the business for local search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CateringService",
+  "name": "The French Buffet",
+  "image": "https://thefrenchbuffet.de/img/og-image.png",
+  "url": "https://thefrenchbuffet.de/",
+  "telephone": "+4917679938472",
+  "email": "contact@thefrenchbuffet.de",
+  "areaServed": {
+    "@type": "City",
+    "name": "Berlin"
+  },
+  "servesCuisine": "French",
+  "priceRange": "€€",
+  "sameAs": [
+    "https://instagram.com/thefrenchbuffet",
+    "https://linkedin.com/company/thefrenchbuffet"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:30",
+    "closes": "21:00"
+  }
+}
+</script>
+
 <!-- Google consent default: deny tracking until the visitor accepts the cookie banner -->
 <script>
   window.dataLayer = window.dataLayer || [];
