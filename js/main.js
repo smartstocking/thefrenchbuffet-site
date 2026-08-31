@@ -285,5 +285,22 @@
         window.location.href = 'mailto:contact@thefrenchbuffet.de?subject=' + subject + '&body=' + body;
       });
     }
+
+    /* ---------- Click-to-call conversion tracking ---------- */
+    /* Secondary Google Ads conversion (observation only, not used for bid
+       optimization): fires whenever a visitor taps a tel: link, whether
+       that's the "Anrufen" button near the contact form or the phone
+       number in the footer. Reported to both Google Ads accounts tied to
+       this business: AW-18412704316 is the live "Catering in Berlin"
+       account, AW-18328755697 the other (currently paused) account. */
+    const telLinks = document.querySelectorAll('a[href^="tel:"]');
+    telLinks.forEach(function(link){
+      link.addEventListener('click', function(){
+        if(typeof gtag === 'function'){
+          gtag('event', 'conversion', {'send_to': 'AW-18412704316/1V8yCOOuq-scELyk7stE'});
+          gtag('event', 'conversion', {'send_to': 'AW-18328755697/yIyVCOOk5eocEPG76qNE'});
+        }
+      });
+    });
   });
 })();
