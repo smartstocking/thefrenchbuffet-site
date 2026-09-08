@@ -53,7 +53,63 @@
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
     "opens": "08:30",
     "closes": "21:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "reviewCount": "6"
   }
+}
+</script>
+
+<!-- Structured data: FAQ rich results in Google Search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie schnell erhalte ich ein Angebot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sie erhalten innerhalb von 24 Stunden ein persönliches, transparentes Angebot – ganz ohne automatisiertes System."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es eine Mindestanzahl an Personen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Wir sind flexibel und richten uns nach Ihrer Gruppengröße, von kleinen Anlässen bis zu 300 Personen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Könnt ihr auf besondere Ernährungsbedürfnisse eingehen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Unsere Menüs sind vollständig anpassbar – vegan, halal, koscher oder glutenfrei sind kein Problem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Liefert ihr auch kurzfristig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir liefern in ganz Berlin, auch bei kurzfristigen Anfragen. Je früher Sie uns kontaktieren, desto mehr Spielraum haben wir bei der Planung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet euer Catering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unsere Preise richten sich individuell nach Anlass, Personenzahl und Menüwahl. Kontaktieren Sie uns einfach für ein maßgeschneidertes Angebot."
+      }
+    }
+  ]
 }
 </script>
 
@@ -90,7 +146,7 @@
       <a href="#galerie" data-i18n="nav.gallery">Galerie</a>
       <a href="#referenzen" data-i18n="nav.reviews">Referenzen</a>
       <a href="#angebote" data-i18n="nav.offers">Angebote</a>
-      <a href="#actus" data-i18n="nav.news">Actus</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
 
     <div class="header-actions">
@@ -111,7 +167,7 @@
     <a href="#galerie" data-i18n="nav.gallery">Galerie</a>
     <a href="#referenzen" data-i18n="nav.reviews">Referenzen</a>
     <a href="#angebote" data-i18n="nav.offers">Unsere Angebote</a>
-    <a href="#actus" data-i18n="nav.news">Actus</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
     <a href="#anfragen" data-i18n="nav.cta">Jetzt anfragen</a>
   </div>
 </header>
@@ -513,37 +569,33 @@
   </div>
 </section>
 
-<!-- ============ ACTUS ============ -->
-<section class="section actus" id="actus">
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
   <div class="container">
-    <p class="eyebrow center" data-i18n="actus.eyebrow">ACTUS</p>
-    <h2 class="center" data-i18n="actus.title">Was bei uns gerade passiert</h2>
+    <p class="eyebrow center" data-i18n="faq.eyebrow">FAQ</p>
+    <h2 class="center" data-i18n="faq.title">Häufig gestellte Fragen</h2>
 
-    <div class="actus-grid">
-      <article class="actus-card">
-        <picture><source srcset="img/gallery-office-morrisonfoerster.webp" type="image/webp"><img src="img/gallery-office-morrisonfoerster.jpg" alt="Firmenevent bei einer Berliner Kanzlei" loading="lazy"></picture>
-        <div class="actus-body">
-          <p class="actus-date" data-i18n="actus.c1.date">Letztes Event</p>
-          <h3 data-i18n="actus.c1.title">Firmenevent für eine internationale Kanzlei in Berlin</h3>
-          <p data-i18n="actus.c1.text">Über 100 Gäste, Business-Buffet und persönlicher Service — noch einmal danke für das Vertrauen.</p>
-        </div>
-      </article>
-      <article class="actus-card">
-        <picture><source srcset="img/gallery-plated-tajine.webp" type="image/webp"><img src="img/gallery-plated-tajine.jpg" alt="Neues Gericht auf der Karte" loading="lazy"></picture>
-        <div class="actus-body">
-          <p class="actus-date" data-i18n="actus.c2.date">Neu auf der Karte</p>
-          <h3 data-i18n="actus.c2.title">Angerichtete Tellergerichte für Ihre Gala</h3>
-          <p data-i18n="actus.c2.text">Ab sofort auch als serviertes Menü statt Buffet erhältlich — ideal für kleinere, elegante Anlässe.</p>
-        </div>
-      </article>
-      <article class="actus-card">
-        <picture><source srcset="img/gallery-boat-buffet-river.webp" type="image/webp"><img src="img/gallery-boat-buffet-river.jpg" alt="Catering auf dem Schiff" loading="lazy"></picture>
-        <div class="actus-body">
-          <p class="actus-date" data-i18n="actus.c3.date">Besonderer Ort</p>
-          <h3 data-i18n="actus.c3.title">Catering auf dem Boot — mitten auf der Spree</h3>
-          <p data-i18n="actus.c3.text">Sie planen ein Event auf dem Wasser? Wir liefern und richten auch dort an, wo andere Caterer aussteigen.</p>
-        </div>
-      </article>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary data-i18n="faq.q1.q">Wie schnell erhalte ich ein Angebot?</summary>
+        <p data-i18n="faq.q1.a">Sie erhalten innerhalb von 24 Stunden ein persönliches, transparentes Angebot – ganz ohne automatisiertes System.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.q2.q">Gibt es eine Mindestanzahl an Personen?</summary>
+        <p data-i18n="faq.q2.a">Nein. Wir sind flexibel und richten uns nach Ihrer Gruppengröße, von kleinen Anlässen bis zu 300 Personen.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.q3.q">Könnt ihr auf besondere Ernährungsbedürfnisse eingehen?</summary>
+        <p data-i18n="faq.q3.a">Ja. Unsere Menüs sind vollständig anpassbar – vegan, halal, koscher oder glutenfrei sind kein Problem.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.q4.q">Liefert ihr auch kurzfristig?</summary>
+        <p data-i18n="faq.q4.a">Wir liefern in ganz Berlin, auch bei kurzfristigen Anfragen. Je früher Sie uns kontaktieren, desto mehr Spielraum haben wir bei der Planung.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq.q5.q">Was kostet euer Catering?</summary>
+        <p data-i18n="faq.q5.a">Unsere Preise richten sich individuell nach Anlass, Personenzahl und Menüwahl. Kontaktieren Sie uns einfach für ein maßgeschneidertes Angebot.</p>
+      </details>
     </div>
   </div>
 </section>
