@@ -253,36 +253,68 @@
       lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) lightbox.classList.remove('open'); });
     }
 
-    /* ---------- Contact form -> email client ---------- */
+    /* ---------- Contact form -> Formspree ----------
+       Submitted via fetch() straight to Formspree so the request reaches us
+       reliably, regardless of whether the visitor has an email client
+       configured (the previous mailto: link silently failed for anyone
+       without one set up, especially on desktop). */
+    const FORM_MESSAGES = {
+      de: {
+        sending: 'Wird gesendet…',
+        success: 'Danke! Ihre Anfrage wurde erfolgreich versendet. Wir melden uns innerhalb von 24 Stunden.',
+        error: 'Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an contact@thefrenchbuffet.de.'
+      },
+      en: {
+        sending: 'Sending…',
+        success: 'Thank you! Your request has been sent successfully. We’ll get back to you within 24 hours.',
+        error: 'Something went wrong while sending. Please try again or email us directly at contact@thefrenchbuffet.de.'
+      },
+      fr: {
+        sending: 'Envoi en cours…',
+        success: 'Merci ! Votre demande a bien été envoyée. Nous vous répondons sous 24 heures.',
+        error: 'Une erreur est survenue lors de l’envoi. Merci de réessayer ou de nous écrire directement à contact@thefrenchbuffet.de.'
+      }
+    };
+
     const form = document.getElementById('contactForm');
     if(form){
       form.addEventListener('submit', function(e){
         e.preventDefault();
-        const data = new FormData(form);
-        const email = data.get('email') || '';
-        const eventtype = data.get('eventtype') || '';
-        const guests = data.get('guests') || '';
-        const message = data.get('message') || '';
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const statusEl = document.getElementById('formStatus');
+        const msgs = FORM_MESSAGES[currentLang] || FORM_MESSAGES.de;
+        const originalBtnText = submitBtn.textContent;
 
-        const subject = encodeURIComponent('Anfrage über thefrenchbuffet.de — ' + eventtype);
-        const bodyLines = [
-          'E-Mail: ' + email,
-          'Art des Events: ' + eventtype,
-          'Anzahl der Gäste: ' + (guests || '—'),
-          '',
-          'Nachricht:',
-          message || '—'
-        ];
-        const body = encodeURIComponent(bodyLines.join('\n'));
+        submitBtn.disabled = true;
+        submitBtn.textContent = msgs.sending;
+        statusEl.hidden = true;
+        statusEl.classList.remove('form-status--error', 'form-status--success');
 
-        /* Google Ads conversion tracking: fires on the "Envoyer" click itself,
-           since this form has no dedicated confirmation page to load (it opens
-           the visitor's email client via mailto: instead). */
-        if(typeof gtag === 'function'){
-          gtag('event', 'conversion', {'send_to': 'AW-18412704316/T_s6CNyjw-gcELyk7stE'});
-        }
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function(response){
+          if(!response.ok){ throw new Error('Form submission failed'); }
 
-        window.location.href = 'mailto:contact@thefrenchbuffet.de?subject=' + subject + '&body=' + body;
+          /* Google Ads conversion tracking: fires once the request has
+             actually been delivered, not just on the click. */
+          if(typeof gtag === 'function'){
+            gtag('event', 'conversion', {'send_to': 'AW-18412704316/T_s6CNyjw-gcELyk7stE'});
+          }
+
+          form.reset();
+          statusEl.textContent = msgs.success;
+          statusEl.classList.add('form-status--success');
+          statusEl.hidden = false;
+        }).catch(function(){
+          statusEl.textContent = msgs.error;
+          statusEl.classList.add('form-status--error');
+          statusEl.hidden = false;
+        }).finally(function(){
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        });
       });
     }
 
