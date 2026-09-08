@@ -251,6 +251,9 @@ h3{font-size:22px}
 }
 .contact-form select option{color:#000}
 .form-note{text-align:center;font-size:12px;opacity:.6}
+.form-status{text-align:center;font-size:13.5px;padding:12px 14px;border-radius:4px;line-height:1.5}
+.form-status--success{background:rgba(92,107,63,.18);color:#B7D19A}
+.form-status--error{background:rgba(140,50,72,.25);color:#F0B4C0}
 
 /* ===== Footer ===== */
 .site-footer{background:var(--dark);color:var(--cream);padding-top:72px}
