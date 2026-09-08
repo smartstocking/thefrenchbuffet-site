@@ -617,7 +617,7 @@
       </a>
     </div>
 
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgaeppjz" method="POST">
       <label>
         <span data-i18n="contact.form.email">E-MAIL *</span>
         <input type="email" name="email" required>
@@ -641,8 +641,11 @@
         <span data-i18n="contact.form.message">KURZE NACHRICHT</span>
         <textarea name="message" rows="3"></textarea>
       </label>
+      <input type="hidden" name="_subject" value="Neue Anfrage über thefrenchbuffet.de">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.form.submit">ANGEBOT ANFORDERN</button>
       <p class="form-note" data-i18n="contact.form.note">Antwort in 24h — persönlich, kein Bot.</p>
+      <p class="form-status" id="formStatus" role="status" hidden></p>
     </form>
   </div>
 </section>
