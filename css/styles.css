@@ -224,6 +224,16 @@ h3{font-size:22px}
 .menu-card .btn{margin-top:10px;align-self:center}
 .offers-note{text-align:center;font-size:13px;opacity:.65;max-width:640px;margin:32px auto 0}
 
+/* ===== Weihnachten / Noël ===== */
+.christmas-section{background:var(--cream-2)}
+.christmas-card-wrap{max-width:460px;margin:48px auto 0}
+.christmas-card{border-color:var(--gold);background:var(--cream);text-align:center}
+.christmas-card .card-icon{margin:0 auto 10px}
+.christmas-card ul{text-align:left}
+.christmas-card .price-hint{font-size:20px;font-weight:600;color:var(--burgundy);border-top:none;padding-top:0;margin-bottom:18px}
+.christmas-card .btn{width:100%}
+.nav-xmas{color:var(--gold)}
+
 /* ===== Actus ===== */
 .faq{background:var(--cream-2)}
 .faq-list{max-width:760px;margin:48px auto 0;display:flex;flex-direction:column;gap:14px}
